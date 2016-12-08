@@ -1,0 +1,20 @@
+body {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 10pt; color: #003300; background-color: #990000; margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;
+scrollbar-base-color: #990000;
+scrollbar-arrow-color: #CCFFCC;
+scrollbar-darkshadow-color: #660000;
+}
+p {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 10pt; color: #003300}
+ul {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 10pt; color: #003300; list-style-image: url(images/bullet_05.gif)}
+h1 {  font-family: Arial, Helvetica, sans-serif; font-size: 16pt; color: #990000}
+h2 {  font-family: Arial, Helvetica, sans-serif; font-size: 14pt; color: #006633}
+.body-table {  background-color: #FFFFFF; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px}
+.navigation {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 9pt; color: #003300; text-align: center; font-weight: bold}
+a.navigation:active {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #00FF66; text-decoration: none}
+a.navigation:hover {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #009966; text-decoration: none}
+a.navigation:link {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #006633; text-decoration: none}
+a.navigation:visited {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #990000; text-decoration: none}
+a:active {  font-weight: normal; color: #006633; text-decoration: none}
+a:hover {  color: #009966}
+a:link {  color: #990000}
+a:visited {  color: #006633}
+hr {  color: #990000}
