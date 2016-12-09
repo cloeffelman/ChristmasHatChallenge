@@ -83,35 +83,125 @@ var Leaders = React.createClass({
 
 var Contestants = React.createClass({
   displayName: 'Contestants',
+  compare: function(a, b){
+    if(a.votes == b.votes){
+      return 0;
+    }
+    else{
+      return a.votes < b.votes ? -1 : 1;
+    }
+  },
+  sort: function(contestants){
+    return contestants.sort(this.compare);
+  },
   render: function() {
     var data = {
       "contestants":[
         {
           "firstName":  "John",
           "lastName":   "Doe",
-          "votes":      "123"
+          "votes":      123
         },
         {
-          "firstName":  "Anna",
-          "lastName":   "Smith",
-          "votes":      "234"
+          "firstName":  "Cory",
+          "lastName":   "Loeffelman",
+          "votes":      234
         },
         {
-          "firstName":  "Peter",
-          "lastName":   "Jones",
-          "votes":      "345"
+          "firstName":  "sdfsdf",
+          "lastName":   "wefwf",
+          "votes":      345
+        },
+        {
+          "firstName":  "rtert",
+          "lastName":   "fdfgdfg",
+          "votes":      624
+        },
+        {
+          "firstName":  "tyjtyj",
+          "lastName":   "zxczxczxc",
+          "votes":      284
+        },
+        {
+          "firstName":  "sdffef",
+          "lastName":   "sdf",
+          "votes":      291
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
+        },
+        {
+          "firstName":  "kuiku",
+          "lastName":   "yyjyj",
+          "votes":      163
         }
       ]
     };
-    var contestantNodes = data.contestants.map(function(contestant, i) {
-      return(                                                                                                     
+    var sortedContenstants = this.sort(data.contestants).reverse();
+    var place = 4;
+    var contestantNodes = sortedContenstants.map(function(contestant, i) {
+      return(
         <div key={i} className = "contestant">
-          <div className = "name">
-            <h1>{contestant.firstName}</h1>
-            <h1>{contestant.lastName}</h1>
-          </div>
-          <div className = "votes">
-            {contestant.votes}
+          <h1 className = "place">{place++}</h1>
+          <div className = "bar">
+            <div className = "name">
+              <h1>{contestant.firstName} {contestant.lastName}</h1>
+            </div>
+            <div className = "votes">
+              <h1>{contestant.votes}</h1>
+            </div>
           </div>
         </div>
       )
