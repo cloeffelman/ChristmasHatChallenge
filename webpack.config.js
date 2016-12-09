@@ -50,7 +50,7 @@ module.exports = {
         {from: 'src/js/data.js', to: 'assets/data.js'}
       ]),
       new htmlWebpackPlugin({
-        title: 'PPC Report',
+        title: 'Christmas Hat Challenge',
         filename: 'index.html',
         template: 'src/pug/index.pug'
       }),

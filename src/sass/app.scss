@@ -10,8 +10,28 @@
   width: 100%;
 }
 
+/* -- colors -- */
+$light-gold: rgb(255, 217, 102);
+$medium-gold: rgb(255, 191, 0);
+$dark-gold: rgb(204, 153, 0);
+
+$light-silver: rgb(230, 230, 230);
+$medium-silver: rgb(166, 166, 166);
+$dark-silver: rgb(115, 115, 115);
+
+$light-bronze: rgb(215, 153, 91);
+$medium-bronze: rgb(205, 127, 50);
+$dark-bronze: rgb(164, 102, 40);
+
+$light-green: rgb(71, 209, 71);
+$green: rgb(0, 153, 51);
+
+$light-red: rgb(255, 51, 51);
+$red: rgb(204, 0, 0);
+
 html, body, #app, .content{
   @include full-screen();
+  font-family: 'Roboto', sans-serif;
   overflow: hidden;
 }
 
@@ -22,6 +42,290 @@ html, body, #app, .content{
 .header{
   align-items: center;
   display: flex;
-  height: 50%;
+  height: 100%;
+  justify-content: center;
   width: 100%;
+}
+
+#snow{
+  @include full-screen();
+  background: linear-gradient(to bottom, rgb(23,82,145), rgb(105,173,212));
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.title{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+
+  hr{
+    width: 500px;
+  }
+
+  .year, .text{
+    color: white;
+    font-size: 96px;
+    font-weight: 100;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+  }
+  .year{
+    font-size: 96px;
+  }
+  .text{
+    font-size: 48px;
+  }
+}
+
+.totals{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 3;
+
+  .money, .votes{
+    align-items: center;
+    display: flex;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    height: 70px;
+    margin-top: 10px;
+  }
+
+  .votes{
+    .icon{
+      align-items: center;
+      background-color: white;
+      border-bottom-left-radius: 25px;
+      border-top-left-radius: 25px;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      padding: 10px;
+      width: 50px;
+    }
+    .value{
+      align-items: center;
+      background: repeating-linear-gradient(
+        -45deg,
+        $light-red,
+        $light-red 30px,
+        $red 30px,
+        $red 60px
+      );
+      color: white;
+      display: flex;
+      font-size: 24px;
+      height: 50px;
+      justify-content: center;
+      padding: 10px;
+      width: 100px;
+    }
+  }
+
+  .money{
+    .icon{
+      align-items: center;
+      background-color: white;
+      border-bottom-left-radius: 25px;
+      border-top-left-radius: 25px;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      padding: 10px;
+      width: 50px;
+    }
+    .value{
+      align-items: center;
+      background: repeating-linear-gradient(
+        -45deg,
+        $light-green,
+        $light-green 30px,
+        $green 30px,
+        $green 60px
+      );
+      color: white;
+      display: flex;
+      font-size: 24px;
+      height: 50px;
+      justify-content: center;
+      padding: 10px;
+      width: 100px;
+    }
+  }
+}
+
+.ground{
+  background-color: white;
+  border-top-left-radius: 100% 50%;
+  border-top-right-radius: 100% 50%;
+  bottom: 0px;
+  height: 100px;
+  position: absolute;
+  width: 120%;
+  z-index: 2;
+}
+
+.contestants{
+  background-color: rgba(255,255,255,0.4);
+  bottom: 0px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  width: 300px;
+  z-index: 3;
+}
+
+.leaders{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 600px;
+  z-index: 3;
+
+  .names{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 100%;
+    width: 300px;
+
+    .name{
+      display: flex;
+      margin-bottom: 20px;
+      width: 100%;
+      z-index: 2;
+
+      h1{
+        align-items: center;
+        box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        color: white;
+        display: flex;
+        font-weight: 100;
+        justify-content: center;
+        margin: 0px;
+        text-shadow: 1px 1px black;
+      }
+
+      &.first{
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-gold,
+            $dark-gold 50px,
+            $medium-gold 50px,
+            $medium-gold 100px
+          );
+          border-radius: 80px;
+          font-size: 32px;
+          height: 160px;
+          margin-left: -160px;
+          padding-left: 170px;
+          padding-right: 10px;
+          width: 320px;
+        }
+      }
+      &.second{
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-silver,
+            $dark-silver 40px,
+            $medium-silver 40px,
+            $medium-silver 80px
+          );
+          border-radius: 60px;
+          font-size: 24px;
+          height: 120px;
+          margin-left: -120px;
+          padding-left: 130px;
+          padding-right: 10px;
+          width: 240px;
+        }
+      }
+      &.third{
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-bronze,
+            $dark-bronze 30px,
+            $medium-bronze 30px,
+            $medium-bronze 60px
+          );
+          border-radius: 40px;
+          font-size: 18px;
+          height: 80px;
+          margin-left: -80px;
+          padding-left: 90px;
+          padding-right: 10px;
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  .medals{
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 160px;
+    z-index: 3;
+
+    .medal{
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0px;
+      margin-bottom: 20px;
+      width: 100%;
+
+      h1{
+        align-items: center;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+      }
+
+      &.first{
+        height: 160px;
+        h1{
+          font-size: 48px;
+          height: 160px;
+          width: 160px;
+        }
+      }
+      &.second{
+        height: 120px;
+        h1{
+          font-size: 36px;
+          height: 120px;
+          width: 120px;
+        }
+      }
+      &.third{
+        height: 80px;
+        h1{
+          font-size: 24px;
+          height: 80px;
+          width: 80px;
+        }
+      }
+    }
+  }
 }
