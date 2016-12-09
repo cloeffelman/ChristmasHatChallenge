@@ -54,6 +54,26 @@ html, body, #app, .content{
   z-index: 1;
 }
 
+.footer{
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  display: flex;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  .text{
+    margin: 10px 20px;
+
+    p{
+      padding: 10px;
+    }
+  }
+}
+
 .title{
   align-items: center;
   display: flex;
@@ -182,13 +202,12 @@ html, body, #app, .content{
 }
 
 .contestants{
-  background-color: rgba(255,255,255,0.4);
   bottom: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   left: 0px;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 0px;
   padding-bottom: 20px;
   position: relative;
@@ -211,23 +230,24 @@ html, body, #app, .content{
     .bar{
       align-items: center;
       background: repeating-linear-gradient(
-        -45deg,
+        45deg,
         $light-blue,
         $light-blue 30px,
         $blue 30px,
         $blue 60px
       );
-      border-radius: 25px;
+      border-radius: 30px;
       box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
       display: flex;
-      height: 30px;
-      margin-left: -50px;
-      padding: 10px;
+      height: 60px;
+      margin-left: -60px;
       position: relative;
       width: 240px;
 
       .name{
-        margin-left: 50px;
+        margin-left: 60px;
+        text-align: center;
+        width: 180px;
 
         h1{
           color: white;
@@ -249,21 +269,43 @@ html, body, #app, .content{
       }
     }
 
-    .place{
-      align-items: center;
+    .medal{
       background-color: white;
-      border-radius: 25px;
-      display: flex;
-      height: 30px;
-      justify-content: center;
-      padding: 10px;
-      width: 30px;
+      border-radius: 30px;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      height: 60px;
+      width: 60px;
       z-index: 2;
-    }
-  }
 
-  .votes{
-    margin-left: 10px;
+      h1{
+        margin: 0px !important;
+      }
+
+      .place{
+        align-items: center;
+        border-radius: 30px;
+        color: $blue;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin: 0px;
+        text-align: center;
+        width: 60px;
+      }
+
+      .votes{
+        align-items: center;
+        background-color: $blue;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color: white;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin: 0px;
+        width: 60px;
+      }
+    }
   }
 }
 
@@ -359,49 +401,93 @@ html, body, #app, .content{
 
   .medals{
     height: 100%;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 160px;
     z-index: 3;
 
-    .medal{
-      align-items: center;
+    .medal-wrapper{
       display: flex;
       justify-content: flex-end;
+      width: 100%;
+    }
+
+    .medal{
+      align-items: center;
       margin: 0px;
       margin-bottom: 20px;
       width: 100%;
 
-      h1{
+      .place{
         align-items: center;
-        background-color: white;
-        border-radius: 50%;
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+        color: $blue;
         display: flex;
+        height: 50%;
         justify-content: center;
+        margin: 0px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .votes{
+        align-items: center;
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        color: white;
+        display: flex;
+        height: 50%;
+        justify-content: center;
+        margin: 0px;
+        width: 100%;
       }
 
       &.first{
         height: 160px;
-        h1{
-          font-size: 48px;
-          height: 160px;
-          width: 160px;
+        width: 160px;
+
+        .place{
+          background-color: white;
+          color: $dark-gold;
+          font-size: 36px;
+          height: 80px;
+        }
+        .votes{
+          background-color: $dark-gold;
+          font-size: 36px;
         }
       }
       &.second{
         height: 120px;
-        h1{
-          font-size: 36px;
-          height: 120px;
-          width: 120px;
+        width: 120px;
+
+        .place{
+          background-color: white;
+          color: $dark-silver;
+          font-size: 24px;
+          height: 60px;
+        }
+        .votes{
+          background-color: $dark-silver;
+          font-size: 24px;
         }
       }
       &.third{
         height: 80px;
-        h1{
-          font-size: 24px;
-          height: 80px;
-          width: 80px;
+        width: 80px;
+
+        .place{
+          background-color: white;
+          color: $dark-bronze;
+          font-size: 18px;
+          height: 40px;
+        }
+        .votes{
+          background-color: $dark-bronze;
+          font-size: 18px;
         }
       }
     }

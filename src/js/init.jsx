@@ -16,7 +16,3 @@ ReactDOM.render(
 $(document).ready(function() {
   snowObj.init();
 });
-
-$(window).scroll(function() {
-
-});
