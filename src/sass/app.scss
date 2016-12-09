@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Roboto;
+  src: url('../../node_modules/roboto-fontface/fonts/Roboto/Roboto-Thin.ttf');
+}
+
+@mixin full-screen() {
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+}
+
+html, body, #app, .content{
+  @include full-screen();
+  overflow: hidden;
+}
+
+.grid{
+  width: 80%;
+}
+
+.header{
+  align-items: center;
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
