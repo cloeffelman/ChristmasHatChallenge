@@ -165,10 +165,18 @@ html, body, #app, .content{
 
   .image{
     align-items: center;
+    background-color: white;
     display: flex;
-    height: 200px;
+    height: 180px;
     justify-content: center;
+    position: relative;
     width: 100%;
+
+    img{
+      border: none;
+      max-height: 180px;
+      position: absolute;
+    }
   }
 
   .title{

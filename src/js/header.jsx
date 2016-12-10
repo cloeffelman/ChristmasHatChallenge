@@ -5,7 +5,7 @@ import Face from 'material-ui/svg-icons/action/face';
 
 const faceIconStyles = {
   alignItems: "center",
-  color: "white",
+  color: "black",
   display: "flex",
   height: "150px",
   justifyContent: "center",
@@ -246,7 +246,7 @@ var LastYearsWinner = React.createClass({
         <div className = "last-years-winner">
           <h1 className = "title">Last Years Winner!</h1>
           <div className = "image">
-            <img src=""/>
+            <img src="last_years_winner.jpg"/>
             <Face style={faceIconStyles}/>
           </div>
           <h1 className = "name">Bipper Snooginflagin</h1>

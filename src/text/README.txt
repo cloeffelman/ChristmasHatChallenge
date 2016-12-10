@@ -21,6 +21,9 @@ Christmas/Holiday Hat Challenge Page Instructions:
     - Both the upper and lower footer text can be updated in the data.js file as well.
     - Find the "footerText" object and the "upperText" and "lowerText" sub-components.
     - The strings of text directly below these sub-components are what will show up in the footer of the page.
+8. Last years winner image.
+    - Place the jpg image of the previous years winner in the folder with the christmas_hat_challenge.html file.
+    - It must be named last_years_winner.jpg or it will not work.
 7. Thanks and enjoy!
 
 By: Cory Loeffelman
