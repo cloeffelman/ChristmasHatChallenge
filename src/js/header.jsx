@@ -78,7 +78,7 @@ var Title = React.createClass({
   render: function() {
     return(
       <div className = "title">
-        <h1 className = "text">{this.props.year} {this.props.text}</h1>
+        <h1 className = "text"><span className = "year">{this.props.year}</span>{this.props.text}</h1>
         <Lights></Lights>
       </div>
     );

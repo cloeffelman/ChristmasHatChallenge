@@ -122,8 +122,14 @@ html, body, #app, .content{
     margin-top: 20px;
     padding: 20px 40px;
     text-align: center;
-    text-shadow: $light-red 1px 1px, $dark-red 2px 2px, $dark-red 3px 3px, $dark-red 4px 4px, $dark-red 5px 5px, $dark-red 6px 6px;
+    text-shadow: $light-red 1px 1px, $dark-red 2px 2px, $dark-red 3px 3px, $dark-red 4px 4px, $dark-red 5px 5px;
     width: 600px;
+
+    .year{
+      color: $light-green;
+      margin-right: 16px;
+      text-shadow: $light-green 1px 1px, $green 2px 2px, $green 3px 3px, $green 4px 4px, $green 5px 5px;
+    }
   }
 }
 
