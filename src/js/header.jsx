@@ -23,7 +23,7 @@ const moneyIconStyles = {
 
 const votesIconStyles = {
   alignItems: "center",
-  border: "1px solid rgb(0, 102, 204)",
+  border: "2px solid rgb(0, 102, 204)",
   borderRadius: "50%",
   color: "rgb(0, 102, 204)",
   display: "flex",
@@ -65,6 +65,7 @@ var Header = React.createClass({
         <Contestants contestants={contestants}></Contestants>
         <LastYearsWinner></LastYearsWinner>
         <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
+        <Santa></Santa>
         <Snow></Snow>
         <Footer></Footer>
       </div>
@@ -267,6 +268,32 @@ var Lights = React.createClass({
       <ul className = "lights">
         {lights}
       </ul>
+    );
+  }
+});
+
+var Santa = React.createClass({
+  displayName: 'Santa',
+  render: function() {
+    return(
+      <div className="santa">
+	     <div className="head">
+				<div className="face">
+					<div className="redhat">
+						<div className="whitepart"></div>
+						<div className="redpart"></div>
+						<div className="hatball"></div>
+					</div>
+					<div className="eyes"></div>
+					<div className="beard">
+						<div className="nouse"></div>
+						<div className="mouth"></div>
+					</div>
+				</div>
+				<div className="ears"></div>
+			</div>
+			<div className="body"></div>
+		</div>
     );
   }
 });
