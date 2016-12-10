@@ -47,7 +47,9 @@ module.exports = {
         "window.jQuery": "jquery"
       }),
       new copyWebpackPlugin([
-        {from: 'src/text/README.txt', to: '../README.txt'}
+        {from: 'src/text/README.txt', to: '../christmas_hat_challenge_instructions.txt'},
+        {from: 'src/img/last_years_winner.jpg', to: '../last_years_winner.jpg'},
+        {from: 'src/js/data.js', to: '../assets/data.js'}
       ]),
       new webpack.DefinePlugin({
         'process.env': {
