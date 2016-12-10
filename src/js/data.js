@@ -35,40 +35,23 @@ var data = {
     {
       "name":   "Ooogie Boogie",
       "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
-    },
-    {
-      "name":   "Ooogie Boogie",
-      "votes":  222
     }
   ],
   "title":[
     {
       "year": "2016",
       "text": "Holiday Hat Challenge"
+    }
+  ],
+  "footerText":[
+    {
+      "upperText":
+
+        "This year's campaign will be open to the entire IS department. For your $1 or 3 cans of food donation, you may choose to participate. Each dollar or 3 cans of food buys you one vote. The 'winner' will get to wear one of the prized 'Christmas Hats' for an entire day.",
+
+      "lowerText":
+
+        "Cast your votes of $1 or 3 cans of food with any of the following IS Social Committee members: Jeanne Haslag, Brenda Mantooth, Don Martindale, Ryan Silverwood, Stacy Haller, Tiffany Lancaster, Paula Turnbull, and Marjorie Turner"
     }
   ],
   "totals":[

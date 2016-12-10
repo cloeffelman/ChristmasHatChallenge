@@ -13,10 +13,14 @@ Christmas/Holiday Hat Challenge Page Instructions:
 5. OVERRIDE for auto calculations.
     - If the values for the automatically calculated totals need to be overridden and manually entered (in case they differ), you may do so at the bottom of the data.js file.
     - Simply set the "overrideAutoCalculate" value to true and enter the totals below in the corresponding fields.
-6. Updating title info.
+6. Updating title text-shadow.
     - This can also be done in the data.js file.
     - Find the "title" object near the bottom of the data.js file.
     - You are free to change both the year and the title text here.
+7. Updating footer text.
+    - Both the upper and lower footer text can be updated in the data.js file as well.
+    - Find the "footerText" object and the "upperText" and "lowerText" sub-components.
+    - The strings of text directly below these sub-components are what will show up in the footer of the page.
 7. Thanks and enjoy!
 
 By: Cory Loeffelman

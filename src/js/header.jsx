@@ -67,7 +67,7 @@ var Header = React.createClass({
         <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
         <Santa></Santa>
         <Snow></Snow>
-        <Footer></Footer>
+        <Footer upperText={data.footerText[0].upperText} lowerText={data.footerText[0].lowerText}></Footer>
       </div>
     );
   }
@@ -92,11 +92,11 @@ var Footer = React.createClass({
       <div className = "footer">
         <div className = "text">
           <p>
-            This year's campaign will be open to the entire IS department. For your $1 or 3 cans of food donation, you may choose to participate. Each dollar or 3 cans of food buys you one vote. The 'winner' will get to wear one of the prized 'Christmas Hats' for an entire day.
+            {this.props.upperText}
           </p>
           <hr/>
           <p>
-            Cast your votes of $1 or 3 cans of food with any of the following IS Social Committee members: Jeanne Haslag, Brenda Mantooth, Don Martindale, Ryan Silverwood, Stacy Haller, Tiffany Lancaster, Paula Turnbull, and Marjorie Turner
+            {this.props.lowerText}
           </p>
         </div>
       </div>
