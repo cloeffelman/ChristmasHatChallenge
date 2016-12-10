@@ -55,8 +55,8 @@ module.exports = {
         }
       }),
       new htmlWebpackPlugin({
-        title: 'PPC Report',
-        filename: '../PPC_REPORT_DOUBLECLICK.html',
+        title: 'Christmas Hat Challenge',
+        filename: '../Christmas_hat_challenge.html',
         template: 'src/pug/index.pug'
       }),
     ],
