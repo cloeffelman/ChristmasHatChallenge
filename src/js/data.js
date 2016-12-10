@@ -1,23 +1,23 @@
 var data = {
   "contestants":[
     {
-      "name":  "John Doe",
+      "name":  "Zed",
       "votes":      123
     },
     {
-      "name":  "Cory Loeffelman",
+      "name":  "Lingo Wikapski",
       "votes":      234
     },
     {
-      "name":  "Billy Bob",
+      "name":  "Jurkie Turkipz",
       "votes":      345
     },
     {
-      "name":  "Sally Jones",
+      "name":  "Salami Tawmi",
       "votes":      624
     },
     {
-      "name":  "Fred Tinkerson",
+      "name":  "Flak Wakalaka",
       "votes":      284
     },
     {
@@ -25,7 +25,7 @@ var data = {
       "votes":      291
     },
     {
-      "name":  "Joe Shmoe",
+      "name":  "Jlobby Pippio",
       "votes":      163
     },
     {
@@ -33,8 +33,8 @@ var data = {
       "votes":      145
     },
     {
-      "name":  "Joe Shmoe",
-      "votes":      163
+      "name":  "Ooogie Boogie",
+      "votes":      975
     }
   ],
   "title":[

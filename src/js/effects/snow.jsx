@@ -65,7 +65,7 @@ snowObj.snow = function() {
       }
 
       ctx.beginPath();
-      //ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+      ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
       ctx.fill();
   }
   requestAnimationFrame(snowObj.snow);

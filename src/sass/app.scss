@@ -34,6 +34,7 @@ $light-red: rgb(255, 51, 51);
 $red: rgb(204, 0, 0);
 $light-red-t: rgba(255, 51, 51, 0.5);
 $red-t: rgba(204, 0, 0, 0.5);
+$dark-red: rgb(102, 0, 0);
 
 $light-blue: rgb(51, 173, 255);
 $blue: rgb(0, 102, 204);
@@ -111,16 +112,17 @@ html, body, #app, .content{
 
   .text{
     background-color: white;
-    border-bottom-left-radius: 78px;
-    border-bottom-right-radius: 78px;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
-    color: black;
+    border-radius: 60px;
+    box-shadow: 0px -8px 4px rgba(0, 0, 0, 0.15);
+    color: $light-red;
     font-size: 48px;
-    font-weight: 100;
+    font-weight: bolder;
     margin: 0px;
-    padding: 10px;
+    margin-top: 20px;
+    padding: 20px 40px;
     text-align: center;
-    width: 1000px;
+    text-shadow: $light-red 1px 1px, $dark-red 2px 2px, $dark-red 3px 3px, $dark-red 4px 4px, $dark-red 5px 5px, $dark-red 6px 6px;
+    width: 600px;
   }
 }
 
@@ -148,12 +150,15 @@ html, body, #app, .content{
   h1{
     align-items: center;
     background-color: white;
+    color: $light-blue;
     display: flex;
     font-size: 24px;
+    font-weight: 700;
     height: 20px;
     justify-content: center;
     margin: 0px;
     padding: 20px 0px;
+    text-shadow: $light-blue 1px 1px, $dark-blue 2px 2px;
     width: 100%;
   }
 
@@ -200,6 +205,7 @@ html, body, #app, .content{
     box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     height: 70px;
     margin-top: 10px;
+    text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
   }
 
   .votes{
@@ -336,6 +342,7 @@ html, body, #app, .content{
       .name{
         margin-left: 60px;
         text-align: center;
+        text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
         width: 180px;
 
         h1{
@@ -373,12 +380,14 @@ html, body, #app, .content{
       .place{
         align-items: center;
         border-radius: 30px;
-        color: $blue;
+        color: $light-blue;
         display: flex;
+        font-weight: bolder;
         height: 30px;
         justify-content: center;
         margin: 0px;
         text-align: center;
+        text-shadow: $light-blue 1px 1px, $dark-blue 2px 2px;
         width: 60px;
       }
 
@@ -392,6 +401,7 @@ html, body, #app, .content{
         height: 30px;
         justify-content: center;
         margin: 0px;
+        text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
         width: 60px;
       }
     }
@@ -434,6 +444,7 @@ html, body, #app, .content{
     .name{
       display: flex;
       margin-bottom: 20px;
+      text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
       width: 100%;
       z-index: 2;
 
@@ -442,7 +453,7 @@ html, body, #app, .content{
         box-shadow: -16px -16px 4px rgba(0,0,0,0.15);
         color: white;
         display: flex;
-        font-weight: 700;
+        font-weight: bolder;
         justify-content: center;
         margin: 0px;
       }
@@ -543,12 +554,12 @@ html, body, #app, .content{
         align-items: center;
         border-bottom-left-radius: 80px;
         border-bottom-right-radius: 80px;
-        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
         color: white;
         display: flex;
         height: 50%;
         justify-content: center;
         margin: 0px;
+        text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
         width: 100%;
       }
 
@@ -558,9 +569,10 @@ html, body, #app, .content{
 
         .place{
           background-color: white;
-          color: $dark-gold;
+          color: $light-gold;
           font-size: 36px;
           height: 80px;
+          text-shadow: $light-gold 1px 1px, $dark-gold 2px 2px, $dark-gold 3px 3px, $dark-gold 4px 4px;
         }
         .votes{
           background-color: $dark-gold;
@@ -573,9 +585,10 @@ html, body, #app, .content{
 
         .place{
           background-color: white;
-          color: $dark-silver;
+          color: $light-silver;
           font-size: 24px;
           height: 60px;
+          text-shadow: $light-silver 1px 1px, $dark-silver 2px 2px, $dark-silver 3px 3px, $dark-silver 4px 4px;
         }
         .votes{
           background-color: $dark-silver;
@@ -588,9 +601,10 @@ html, body, #app, .content{
 
         .place{
           background-color: white;
-          color: $dark-bronze;
+          color: $light-bronze;
           font-size: 18px;
           height: 40px;
+          text-shadow: $light-bronze 1px 1px, $dark-bronze 2px 2px;
         }
         .votes{
           background-color: $dark-bronze;
@@ -610,7 +624,7 @@ $globe-spread: 3px;
 $light-off-opacity: 0.4;
 
 .lights {
-  top: 76px;
+  top: 115px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;

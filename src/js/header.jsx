@@ -23,9 +23,12 @@ const moneyIconStyles = {
 
 const votesIconStyles = {
   alignItems: "center",
+  border: "1px solid rgb(255, 51, 51)",
+  borderRadius: "50%",
   color: "rgb(255, 51, 51)",
   display: "flex",
   height: "30px",
+  padding: "2px",
   justifyContent: "center",
   width: "30px"
 };
@@ -61,7 +64,7 @@ var Header = React.createClass({
         <Leaders leaders={leaders}></Leaders>
         <Contestants contestants={contestants}></Contestants>
         <LastYearsWinner></LastYearsWinner>
-        <TotalVotes override={data.overrideAutoCalculate} totalVotes = {totalVotes}></TotalVotes>
+        <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
         <Snow></Snow>
         <Footer></Footer>
       </div>
@@ -74,7 +77,7 @@ var Title = React.createClass({
   render: function() {
     return(
       <div className = "title">
-        <h1 className = "text">{this.props.text} | {this.props.year}</h1>
+        <h1 className = "text">{this.props.year} {this.props.text}</h1>
         <Lights></Lights>
       </div>
     );
@@ -213,15 +216,21 @@ var TotalVotes = React.createClass({
     }, 1000);
   },
   render: function() {
+    var totalVotes = this.props.totalVotes;
+    var totalMoney = this.props.totalVotes;
+    if(this.props.override == true){
+      totalVotes = this.props.overrideTotalVotes;
+      totalMoney = this.props.overrideTotalMoney;
+    }
     return(
       <div className = "totals">
         <div className = "votes">
           <h1 className = "icon"><Done style={votesIconStyles}/></h1>
-          <h1 className = "value">{this.props.totalVotes}</h1>
+          <h1 className = "value">{totalVotes}</h1>
         </div>
         <div className = "money">
           <h1 className = "icon"><AttachMoney style={moneyIconStyles}/></h1>
-          <h1 className = "value">{this.props.totalVotes}</h1>
+          <h1 className = "value">{totalMoney}</h1>
         </div>
       </div>
     );
@@ -234,12 +243,12 @@ var LastYearsWinner = React.createClass({
     return(
       <div className = "last-years-winner-wrapper">
         <div className = "last-years-winner">
-          <h1 className = "title">Last Years Winner</h1>
+          <h1 className = "title">Last Years Winner!</h1>
           <div className = "image">
             <img src=""/>
             <Face style={faceIconStyles}/>
           </div>
-          <h1 className = "name">Mike Griffith</h1>
+          <h1 className = "name">Bipper Snooginflagin</h1>
         </div>
       </div>
     );
@@ -250,7 +259,7 @@ var Lights = React.createClass({
   displayName: 'Lights',
   render: function() {
     var lights = [];
-    var numberOfLights = 18;
+    var numberOfLights = 12;
     for (var i = 0; i < numberOfLights; i++) {
       lights.push(<li key={i}></li>);
     }
