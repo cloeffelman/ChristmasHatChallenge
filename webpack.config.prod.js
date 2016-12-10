@@ -56,7 +56,7 @@ module.exports = {
       }),
       new htmlWebpackPlugin({
         title: 'Christmas Hat Challenge',
-        filename: '../Christmas_hat_challenge.html',
+        filename: '../christmas_hat_challenge.html',
         template: 'src/pug/index.pug'
       }),
     ],
