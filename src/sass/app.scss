@@ -224,10 +224,10 @@ html, body, #app, .content{
       align-items: center;
       background: repeating-linear-gradient(
         -45deg,
-        $light-red,
-        $light-red 30px,
-        $red 30px,
-        $red 60px
+        $light-blue,
+        $light-blue 30px,
+        $blue 30px,
+        $blue 60px
       );
       color: white;
       display: flex;
@@ -314,7 +314,7 @@ html, body, #app, .content{
     display: flex;
     height: 50%;
     justify-content: center;
-    margin: 0px 20px 20px 0px;
+    margin: 0px 20px 26px 0px;
     width: 260px;
 
     h1{
@@ -332,7 +332,7 @@ html, body, #app, .content{
         $blue 60px
       );
       border-radius: 30px;
-      box-shadow: 16px -16px 4px rgba(0,0,0,0.15);
+      box-shadow: 0px 0px 0px 8px $blue, 26px -26px 4px rgba(0,0,0,0.15);
       display: flex;
       height: 60px;
       margin-left: -60px;
@@ -443,7 +443,7 @@ html, body, #app, .content{
 
     .name{
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
       width: 100%;
       z-index: 2;
@@ -459,6 +459,8 @@ html, body, #app, .content{
       }
 
       &.first{
+        position: relative;
+        z-index: 3;
         h1{
           background: repeating-linear-gradient(
             45deg,
@@ -468,6 +470,7 @@ html, body, #app, .content{
             $medium-gold 100px
           );
           border-radius: 80px;
+          box-shadow: 0px 0px 0px 10px $dark-gold, -36px -26px 4px rgba(0,0,0,0.15);
           font-size: 32px;
           height: 160px;
           margin-left: -160px;
@@ -477,6 +480,8 @@ html, body, #app, .content{
         }
       }
       &.second{
+        position: relative;
+        z-index: 2;
         h1{
           background: repeating-linear-gradient(
             45deg,
@@ -486,6 +491,7 @@ html, body, #app, .content{
             $medium-silver 80px
           );
           border-radius: 60px;
+          box-shadow: 0px 0px 0px 10px $dark-silver, -36px -26px 4px rgba(0,0,0,0.15);
           font-size: 24px;
           height: 120px;
           margin-left: -120px;
@@ -495,6 +501,8 @@ html, body, #app, .content{
         }
       }
       &.third{
+        position: relative;
+        z-index: 1;
         h1{
           background: repeating-linear-gradient(
             45deg,
@@ -504,6 +512,7 @@ html, body, #app, .content{
             $medium-bronze 60px
           );
           border-radius: 40px;
+          box-shadow: 0px 0px 0px 10px $dark-bronze, -36px -26px 4px rgba(0,0,0,0.15);
           font-size: 18px;
           height: 80px;
           margin-left: -80px;
@@ -521,7 +530,7 @@ html, body, #app, .content{
     flex-direction: column;
     position: relative;
     width: 160px;
-    z-index: 3;
+    z-index: 5;
 
     .medal-wrapper{
       display: flex;
@@ -534,7 +543,7 @@ html, body, #app, .content{
       box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
       border-radius: 50%;
       margin: 0px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       width: 100%;
 
       .place{

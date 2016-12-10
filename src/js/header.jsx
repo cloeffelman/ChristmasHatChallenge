@@ -23,14 +23,14 @@ const moneyIconStyles = {
 
 const votesIconStyles = {
   alignItems: "center",
-  border: "1px solid rgb(255, 51, 51)",
+  border: "1px solid rgb(0, 102, 204)",
   borderRadius: "50%",
-  color: "rgb(255, 51, 51)",
+  color: "rgb(0, 102, 204)",
   display: "flex",
-  height: "30px",
+  height: "26px",
   padding: "2px",
   justifyContent: "center",
-  width: "30px"
+  width: "26px"
 };
 
 var Header = React.createClass({
