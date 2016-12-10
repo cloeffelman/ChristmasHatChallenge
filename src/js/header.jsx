@@ -1,6 +1,16 @@
 import React from 'react';
 import AttachMoney from 'material-ui/svg-icons/editor/attach-money';
 import Done from 'material-ui/svg-icons/action/done';
+import Face from 'material-ui/svg-icons/action/face';
+
+const faceIconStyles = {
+  alignItems: "center",
+  color: "white",
+  display: "flex",
+  height: "150px",
+  justifyContent: "center",
+  width: "150px"
+};
 
 const moneyIconStyles = {
   alignItems: "center",
@@ -50,8 +60,8 @@ var Header = React.createClass({
         <Title year={data.title[0].year} text={data.title[0].text}></Title>
         <Leaders leaders={leaders}></Leaders>
         <Contestants contestants={contestants}></Contestants>
+        <LastYearsWinner></LastYearsWinner>
         <TotalVotes override={data.overrideAutoCalculate} totalVotes = {totalVotes}></TotalVotes>
-        <Ground></Ground>
         <Snow></Snow>
         <Footer></Footer>
       </div>
@@ -64,9 +74,8 @@ var Title = React.createClass({
   render: function() {
     return(
       <div className = "title">
-        <h1 className = "year">{this.props.year}</h1>
-        <hr/>
-        <h1 className = "text">{this.props.text}</h1>
+        <h1 className = "text">{this.props.text} | {this.props.year}</h1>
+        <Lights></Lights>
       </div>
     );
   }
@@ -93,38 +102,45 @@ var Footer = React.createClass({
 
 var Leaders = React.createClass({
   displayName: 'Leaders',
+  componentDidMount: function() {
+    setTimeout(function(){
+      $(".leaders").addClass("intro");
+    }, 250);
+  },
   render: function() {
     return(
-      <div className = "leaders">
-        <div className = "medals">
-          <div className = "medal-wrapper">
-            <div className = "medal first">
-              <h1 className = "place">1</h1>
-                <h1 className = "votes">{this.props.leaders[0].votes}</h1>
+      <div className = "leaders-wrapper">
+        <div className = "leaders">
+          <div className = "medals">
+            <div className = "medal-wrapper">
+              <div className = "medal first">
+                <h1 className = "place">1<sup>st</sup></h1>
+                  <h1 className = "votes">{this.props.leaders[0].votes}</h1>
+              </div>
+            </div>
+            <div className = "medal-wrapper">
+              <div className = "medal second">
+                  <h1 className = "place">2<sup>nd</sup></h1>
+                    <h1 className = "votes">{this.props.leaders[1].votes}</h1>
+              </div>
+            </div>
+            <div className = "medal-wrapper">
+              <div className = "medal third">
+                  <h1 className = "place">3<sup>rd</sup></h1>
+                    <h1 className = "votes">{this.props.leaders[2].votes}</h1>
+              </div>
             </div>
           </div>
-          <div className = "medal-wrapper">
-            <div className = "medal second">
-                <h1 className = "place">2</h1>
-                  <h1 className = "votes">{this.props.leaders[1].votes}</h1>
+          <div className = "names">
+            <div className = "name first">
+              <h1>{this.props.leaders[0].name}</h1>
             </div>
-          </div>
-          <div className = "medal-wrapper">
-            <div className = "medal third">
-                <h1 className = "place">3</h1>
-                  <h1 className = "votes">{this.props.leaders[2].votes}</h1>
+            <div className = "name second">
+              <h1>{this.props.leaders[1].name}</h1>
             </div>
-          </div>
-        </div>
-        <div className = "names">
-          <div className = "name first">
-            <h1>{this.props.leaders[0].name}</h1>
-          </div>
-          <div className = "name second">
-            <h1>{this.props.leaders[1].name}</h1>
-          </div>
-          <div className = "name third">
-            <h1>{this.props.leaders[2].name}</h1>
+            <div className = "name third">
+              <h1>{this.props.leaders[2].name}</h1>
+            </div>
           </div>
         </div>
       </div>
@@ -134,26 +150,56 @@ var Leaders = React.createClass({
 
 var Contestants = React.createClass({
   displayName: 'Contestants',
+  componentDidMount: function() {
+    setTimeout(function(){
+      $(".contestants").addClass("intro");
+    }, 500);
+  },
+  getPlaceText: function(place){
+    var placeText = place;
+    if(place <= 20){
+      placeText += "th";
+    }
+    else{
+      if(place.toString().charAt(1) == "1") placeText += "st";
+      else if(place.toString().charAt(1) == "2") placeText += "nd";
+      else if(place.toString().charAt(1) == "3") placeText += "rd";
+      else placeText += "th";
+    }
+    return placeText;
+  },
   render: function() {
     var place = 4;
     var contestantNodes = this.props.contestants.map(function(contestant, i) {
+      var placeText = this.getPlaceText(place++);
       return(
-        <div key={i} className = "contestant">
-          <div className = "medal">
-            <h1 className = "place">{place++}</h1>
-            <h1 className = "votes">{contestant.votes}</h1>
-          </div>
-          <div className = "bar">
-            <div className = "name">
-              <h1>{contestant.name}</h1>
-            </div>
+        <Contestant key={i} place={placeText} votes={contestant.votes} name={contestant.name}></Contestant>
+      )
+    }, this);
+    return(
+      <div className = "contestants-wrapper">
+        <div className = "contestants">
+          {contestantNodes}
+        </div>
+      </div>
+    );
+  }
+});
+
+var Contestant = React.createClass({
+  displayName: 'Contestant',
+  render: function() {
+    return(
+      <div className = "contestant">
+        <div className = "medal">
+          <h1 className = "place">{this.props.place}</h1>
+          <h1 className = "votes">{this.props.votes}</h1>
+        </div>
+        <div className = "bar">
+          <div className = "name">
+            <h1>{this.props.name}</h1>
           </div>
         </div>
-      )
-    });
-    return(
-      <div className = "contestants">
-        {contestantNodes}
       </div>
     );
   }
@@ -161,6 +207,11 @@ var Contestants = React.createClass({
 
 var TotalVotes = React.createClass({
   displayName: 'TotalVotes',
+  componentDidMount: function() {
+    setTimeout(function(){
+      $(".totals").addClass("intro");
+    }, 1000);
+  },
   render: function() {
     return(
       <div className = "totals">
@@ -181,19 +232,32 @@ var LastYearsWinner = React.createClass({
   displayName: 'LastYearsWinner',
   render: function() {
     return(
-      <div className = "last-years-winner">
-        <h1>Last Years Winner</h1>
-        <img src=""/>
+      <div className = "last-years-winner-wrapper">
+        <div className = "last-years-winner">
+          <h1 className = "title">Last Years Winner</h1>
+          <div className = "image">
+            <img src=""/>
+            <Face style={faceIconStyles}/>
+          </div>
+          <h1 className = "name">Mike Griffith</h1>
+        </div>
       </div>
     );
   }
 });
 
-var Ground = React.createClass({
-  displayName: 'Ground',
+var Lights = React.createClass({
+  displayName: 'Lights',
   render: function() {
+    var lights = [];
+    var numberOfLights = 18;
+    for (var i = 0; i < numberOfLights; i++) {
+      lights.push(<li key={i}></li>);
+    }
     return(
-      <div className = "ground"></div>
+      <ul className = "lights">
+        {lights}
+      </ul>
     );
   }
 });

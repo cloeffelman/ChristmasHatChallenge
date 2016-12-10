@@ -31,6 +31,10 @@ var data = {
     {
       "name":  "Flibbity Flabbity",
       "votes":      145
+    },
+    {
+      "name":  "Joe Shmoe",
+      "votes":      163
     }
   ],
   "title":[
