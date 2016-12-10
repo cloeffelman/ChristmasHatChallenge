@@ -1,14 +1,16 @@
-.santa {
+.santa-wrapper {
   animation: up-down 20s linear infinite;
+  left: calc(20% + 200px);
   position: absolute;
-  left: 500px;
-  bottom: 100px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
+  z-index: 1;
+}
+@media (max-width: 1500px) {
+  .santa-wrapper {
+    left: 200px;
+  }
+}
+.santa {
+  z-index: -1;
 }
   .santa .body {
     width: 190px;
@@ -709,13 +711,13 @@
     width: 20px; } }
 
 @keyframes up-down {
-  0%, 10%, 100% {
-    bottom: -200px;
+  0%, 20%, 100% {
+    top: -10px;
   }
-  20%, 30%{
-    bottom: 30px;
+  30%, 40%{
+    top: -70px;
   }
-  40%, 80% {
-    bottom: 100px;
+  50%, 90% {
+    top: -170px;
   }
 }

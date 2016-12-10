@@ -17,12 +17,22 @@ var Application = React.createClass({
   render: function() {
     return(
       <MuiThemeProvider>
-        <div className = "content">
+        <div className = "content-wrapper">
+          <Snow></Snow>
           <Header contestants={this.state.data.contestants} title={this.state.data.title} totals={this.state.data.totals}/>
           <Grid className = "grid">
           </Grid>
         </div>
       </MuiThemeProvider>
+    );
+  }
+});
+
+var Snow = React.createClass({
+  displayName: 'Header',
+  render: function() {
+    return(
+      <canvas id = "snow"></canvas>
     );
   }
 });

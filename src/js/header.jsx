@@ -59,14 +59,14 @@ var Header = React.createClass({
     var leaders = sortedContenstants.slice(0, 3);
     var contestants = sortedContenstants.slice(3);
     return(
-      <div className = "header">
-        <Title year={data.title[0].year} text={data.title[0].text}></Title>
-        <Leaders leaders={leaders}></Leaders>
-        <Contestants contestants={contestants}></Contestants>
-        <LastYearsWinner></LastYearsWinner>
-        <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
-        <Santa></Santa>
-        <Snow></Snow>
+      <div className = "content">
+        <div className = "header">
+          <Title year={data.title[0].year} text={data.title[0].text}></Title>
+          <Leaders leaders={leaders}></Leaders>
+          <Contestants contestants={contestants}></Contestants>
+          <LastYearsWinner></LastYearsWinner>
+          <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
+        </div>
         <Footer upperText={data.footerText[0].upperText} lowerText={data.footerText[0].lowerText}></Footer>
       </div>
     );
@@ -89,15 +89,18 @@ var Footer = React.createClass({
   displayName: 'Footer',
   render: function() {
     return(
-      <div className = "footer">
-        <div className = "text">
-          <p>
-            {this.props.upperText}
-          </p>
-          <hr/>
-          <p>
-            {this.props.lowerText}
-          </p>
+      <div className = "footer-wrapper">
+        <Santa></Santa>
+        <div className = "footer">
+          <div className = "text">
+            <p>
+              {this.props.upperText}
+            </p>
+            <hr/>
+            <p>
+              {this.props.lowerText}
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -226,8 +229,8 @@ var TotalVotes = React.createClass({
     return(
       <div className = "totals">
         <div className = "votes">
-          <h1 className = "icon"><Done style={votesIconStyles}/></h1>
           <h1 className = "value">{totalVotes}</h1>
+          <h1 className = "icon"><Done style={votesIconStyles}/></h1>
         </div>
         <div className = "money">
           <h1 className = "icon"><AttachMoney style={moneyIconStyles}/></h1>
@@ -260,7 +263,7 @@ var Lights = React.createClass({
   displayName: 'Lights',
   render: function() {
     var lights = [];
-    var numberOfLights = 12;
+    var numberOfLights = 40;
     for (var i = 0; i < numberOfLights; i++) {
       lights.push(<li key={i}></li>);
     }
@@ -276,33 +279,26 @@ var Santa = React.createClass({
   displayName: 'Santa',
   render: function() {
     return(
-      <div className="santa">
-	     <div className="head">
-				<div className="face">
-					<div className="redhat">
-						<div className="whitepart"></div>
-						<div className="redpart"></div>
-						<div className="hatball"></div>
-					</div>
-					<div className="eyes"></div>
-					<div className="beard">
-						<div className="nouse"></div>
-						<div className="mouth"></div>
-					</div>
-				</div>
-				<div className="ears"></div>
-			</div>
-			<div className="body"></div>
-		</div>
-    );
-  }
-});
-
-var Snow = React.createClass({
-  displayName: 'Header',
-  render: function() {
-    return(
-      <canvas id = "snow"></canvas>
+      <div className="santa-wrapper">
+        <div className="santa">
+    	     <div className="head">
+    				<div className="face">
+    					<div className="redhat">
+    						<div className="whitepart"></div>
+    						<div className="redpart"></div>
+    						<div className="hatball"></div>
+    					</div>
+    					<div className="eyes"></div>
+    					<div className="beard">
+    						<div className="nouse"></div>
+    						<div className="mouth"></div>
+    					</div>
+    				</div>
+    				<div className="ears"></div>
+			     </div>
+			     <div className="body"></div>
+		    </div>
+      </div>
     );
   }
 });

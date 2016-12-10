@@ -41,10 +41,15 @@ $blue: rgb(0, 102, 204);
 $dark-blue: rgb(0, 51, 153);
 $dark-blue-t: rgba(0, 51, 153, 0.5);
 
-html, body, #app, .content{
+html, body, #app, .content-wrapper, .content{
   @include full-screen();
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
+}
+
+@media (max-width: 1500px) {
+  html, body, #app, .content{
+  }
 }
 
 .grid{
@@ -53,15 +58,34 @@ html, body, #app, .content{
 
 .header{
   height: 100%;
+  position: relative;
   width: 100%;
+  z-index: 10;
+}
+
+@media (max-width: 1500px) {
+  .header{
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+  }
 }
 
 #snow{
   @include full-screen();
-  background: linear-gradient(to bottom, rgb(23,82,145), rgb(105,173,212));
+  background: linear-gradient(to bottom, rgb(0, 102, 204), rgb(0, 255, 255));
   position: fixed;
   top: 0px;
   z-index: 1;
+}
+
+.footer-wrapper{
+  bottom: 0px;
+  display: flex;
+  left: -10%;
+  position: fixed;
+  width: 120%;
+  z-index: 10;
 }
 
 .footer{
@@ -72,13 +96,11 @@ html, body, #app, .content{
   bottom: 0px;
   color: black;
   display: flex;
-  left: -10%;
-  margin-top: 40px;
   padding: 10px 0px;
-  position: fixed;
+  position: relative;
   text-align: center;
-  width: 120%;
-  z-index: 5;
+  width: 100%;
+  z-index: 2;
 
   .text{
     display: flex;
@@ -108,27 +130,85 @@ html, body, #app, .content{
   flex-direction: column;
   justify-content: center;
   position: relative;
+  transition: all 1s;
   width: 100%;
-  z-index: 3;
+  z-index: 1111;
 
   .text{
+    align-items: center;
     background-color: white;
     border-radius: 60px;
-    box-shadow: -2px 2px 0px 2px $light-red,2px -2px 0px 2px $light-green, -4px -8px 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: -2px 2px 0px 2px $light-red,2px -2px 0px 2px $light-green, 0px -8px 4px 8px rgba(0, 0, 0, 0.15);
     color: $light-red;
+    display: flex;
     font-size: 48px;
     font-weight: bolder;
+    justify-content: center;
     margin: 0px;
     margin-top: 20px;
+    min-height: 58px;
     padding: 20px 40px;
-    text-align: center;
     text-shadow: $light-red 1px 1px, $dark-red 2px 2px, $dark-red 3px 3px, $dark-red 4px 4px, $dark-red 5px 5px;
+    transition: all 1s;
     width: 600px;
 
     .year{
       color: $light-green;
       margin-right: 16px;
       text-shadow: $light-green 1px 1px, $green 2px 2px, $green 3px 3px, $green 4px 4px, $green 5px 5px;
+    }
+  }
+
+  .lights{
+    transition: all 0.5s;
+    li:nth-child(1n + 13){
+      &:after{
+        display: none;
+      }
+    }
+
+    width: 680px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .title{
+    position: fixed;
+    z-index: 10;
+
+    .text{
+      border-radius: 0px;
+      box-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+      margin-top: 0px;
+      width: 100%;
+    }
+
+    .lights{
+      left: -10%;
+      top: 95px;
+      width: 120%;
+
+      li:nth-child(1n + 13){
+        &:after{
+          display: initial;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .title{
+    .text{
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .title{
+    .text{
+      font-size: 24px;
     }
   }
 }
@@ -141,6 +221,14 @@ html, body, #app, .content{
   position: absolute;
   top: 0px;
   z-index: 3;
+}
+
+@media (max-width: 1500px) {
+  .last-years-winner-wrapper{
+    height: 320px;
+    margin: 320px 0px;
+    position: relative;
+  }
 }
 
 .last-years-winner{
@@ -188,25 +276,30 @@ html, body, #app, .content{
   .title{
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
+    position: absolute;
+    top: 0px;
   }
 
   .name{
+    bottom: 0px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
+    position: absolute;
+    bottom: 0px;
   }
 }
 
 .totals{
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   margin-top: 20px;
-  position: absolute;
-  right: -300px;
+  position: fixed;
+  right: 0px;
   top: 0px;
   transition: all 1s;
-  z-index: 3;
+  width: 100%;
+  z-index: 30;
 
   &.intro{
     right: 0px;
@@ -215,20 +308,22 @@ html, body, #app, .content{
   .money, .votes{
     align-items: center;
     display: flex;
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    border-radius: 25px;
     height: 70px;
-    margin-top: 10px;
+    margin-top: 30px;
     text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
+    transition: all 1s;
   }
 
   .votes{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    left: 0px;
+    position: absolute;
     .icon{
       align-items: center;
       background-color: white;
-      border-bottom-left-radius: 25px;
-      border-top-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
       display: flex;
       height: 50px;
       justify-content: center;
@@ -255,6 +350,9 @@ html, body, #app, .content{
   }
 
   .money{
+    box-shadow: -1px 1px 4px rgba(0,0,0,0.4);
+    right: 0px;
+    position: absolute;
     .icon{
       align-items: center;
       background-color: white;
@@ -286,6 +384,57 @@ html, body, #app, .content{
   }
 }
 
+@media (max-width: 1500px) and (min-width: 1201px) {
+  .totals{
+    .votes, .money{
+      box-shadow: none;
+    }
+
+    .votes{
+      border: 2px solid $blue;
+      border-left: none;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+
+    .money{
+      border: 2px solid $light-green;
+      border-right: none;
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .totals{
+    flex-direction: row;
+    left: 0px;
+    position: absolute;
+    top: 160px;
+    width: 100%;
+
+    .votes, .money{
+      border-radius: 25px;
+      margin: 10px;
+
+      .value{
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+    }
+
+    .votes{
+      .value{
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+    }
+  }
+}
+
 .ground{
   background-color: white;
   border-top-left-radius: 100% 50%;
@@ -304,6 +453,23 @@ html, body, #app, .content{
   position: absolute;
   top: 240px;
   width: 100%;
+}
+
+@media (max-width: 1500px) {
+  .contestants-wrapper{
+    height: auto;
+    justify-content: center;
+    margin-top: 100px;
+    position: relative;
+
+    .contestants{
+      height: auto;
+      left: initial;
+      position: relative;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      width: 100%;
+    }
+  }
 }
 
 .contestants{
@@ -382,6 +548,13 @@ html, body, #app, .content{
       }
     }
 
+
+    @media (max-width: 1500px) {
+      .bar{
+        box-shadow: 0px 0px 0px 8px $blue, 0px -8px 0px 8px $light-blue, 0px -16px 4px 8px rgba(0,0,0,0.15);
+      }
+    }
+
     .medal{
       background-color: white;
       border-radius: 30px;
@@ -425,6 +598,12 @@ html, body, #app, .content{
   }
 }
 
+@media (max-width: 1500px) {
+  .contestants{
+    max-height: none;
+  }
+}
+
 .leaders-wrapper{
   align-items: center;
   display: flex;
@@ -432,6 +611,26 @@ html, body, #app, .content{
   position: absolute;
   top: 240px;
   width: 100%;
+}
+
+@media (max-width: 1500px) {
+  .leaders-wrapper{
+    justify-content: center;
+    position: relative;
+    top: 200px;
+
+    .leaders{
+      left: initial;
+      position: relative;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .leaders-wrapper{
+    top: 320px;
+  }
 }
 
 .leaders{
@@ -495,6 +694,11 @@ html, body, #app, .content{
           padding-right: 10px;
           width: 320px;
         }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-gold, 0px -8px 0px 12px $medium-gold, 0px -46px 4px 12px rgba(0,0,0,0.15);
+          }
+        }
       }
       &.second{
         position: relative;
@@ -516,6 +720,11 @@ html, body, #app, .content{
           padding-right: 10px;
           width: 240px;
         }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-silver, 0px -8px 0px 10px $medium-silver, 0px -36px 4px 10px rgba(0,0,0,0.15);
+          }
+        }
       }
       &.third{
         position: relative;
@@ -536,6 +745,11 @@ html, body, #app, .content{
           padding-left: 90px;
           padding-right: 10px;
           width: 200px;
+        }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-bronze, 0px -8px 0px 10px $medium-bronze, 0px -36px 4px 10px rgba(0,0,0,0.15);
+          }
         }
       }
     }

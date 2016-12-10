@@ -39,7 +39,7 @@ var data = {
   ],
   "title":[
     {
-      "year": "2016",
+      "year": "2017",
       "text": "Holiday Hat Challenge"
     }
   ],
