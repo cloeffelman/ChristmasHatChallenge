@@ -60,5 +60,10 @@ var data = {
       "votes": 0,
       "money": 0
     }
+  ],
+  "lastYearsWinner":[
+    {
+      "name": "Bipper Snooginflagin"
+    }
   ]
 };

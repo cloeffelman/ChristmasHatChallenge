@@ -5,7 +5,7 @@ import Face from 'material-ui/svg-icons/action/face';
 
 const faceIconStyles = {
   alignItems: "center",
-  color: "black",
+  color: "rgb(51, 173, 255)",
   display: "flex",
   height: "150px",
   justifyContent: "center",
@@ -64,7 +64,7 @@ var Header = React.createClass({
           <Title year={data.title[0].year} text={data.title[0].text}></Title>
           <Leaders leaders={leaders}></Leaders>
           <Contestants contestants={contestants}></Contestants>
-          <LastYearsWinner></LastYearsWinner>
+          <LastYearsWinner lastYearsWinner={data.lastYearsWinner[0].name}></LastYearsWinner>
           <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
         </div>
         <Footer upperText={data.footerText[0].upperText} lowerText={data.footerText[0].lowerText}></Footer>
@@ -214,11 +214,6 @@ var Contestant = React.createClass({
 
 var TotalVotes = React.createClass({
   displayName: 'TotalVotes',
-  componentDidMount: function() {
-    setTimeout(function(){
-      $(".totals").addClass("intro");
-    }, 1000);
-  },
   render: function() {
     var totalVotes = this.props.totalVotes;
     var totalMoney = this.props.totalVotes;
@@ -252,7 +247,7 @@ var LastYearsWinner = React.createClass({
             <img src="last_years_winner.jpg"/>
             <Face style={faceIconStyles}/>
           </div>
-          <h1 className = "name">Bipper Snooginflagin</h1>
+          <h1 className = "name">{this.props.lastYearsWinner}</h1>
         </div>
       </div>
     );

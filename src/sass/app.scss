@@ -47,11 +47,6 @@ html, body, #app, .content-wrapper, .content{
   overflow: hidden;
 }
 
-@media (max-width: 1500px) {
-  html, body, #app, .content{
-  }
-}
-
 .grid{
   width: 80%;
 }
@@ -65,8 +60,7 @@ html, body, #app, .content-wrapper, .content{
 
 @media (max-width: 1500px) {
   .header{
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: auto;
     position: fixed;
   }
 }
@@ -292,8 +286,9 @@ html, body, #app, .content-wrapper, .content{
 .totals{
   align-items: center;
   display: flex;
+  height: 90px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 4px;
   position: fixed;
   right: 0px;
   top: 0px;
@@ -301,16 +296,11 @@ html, body, #app, .content-wrapper, .content{
   width: 100%;
   z-index: 30;
 
-  &.intro{
-    right: 0px;
-  }
-
   .money, .votes{
     align-items: center;
     display: flex;
     border-radius: 25px;
     height: 70px;
-    margin-top: 30px;
     text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
     transition: all 1s;
   }
@@ -391,14 +381,14 @@ html, body, #app, .content-wrapper, .content{
     }
 
     .votes{
-      border: 2px solid $blue;
+      border: 1px solid $blue;
       border-left: none;
       border-bottom-left-radius: 0px;
       border-top-left-radius: 0px;
     }
 
     .money{
-      border: 2px solid $light-green;
+      border: 1px solid $light-green;
       border-right: none;
       border-bottom-right-radius: 0px;
       border-top-right-radius: 0px;
@@ -410,13 +400,12 @@ html, body, #app, .content-wrapper, .content{
   .totals{
     flex-direction: row;
     left: 0px;
-    position: absolute;
+    position: fixed;
     top: 160px;
     width: 100%;
 
     .votes, .money{
       border-radius: 25px;
-      margin: 10px;
 
       .value{
         border-bottom-right-radius: 25px;
@@ -425,12 +414,17 @@ html, body, #app, .content-wrapper, .content{
     }
 
     .votes{
+      left: 20px;
       .value{
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
         border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
       }
+    }
+
+    .money{
+      right: 40px;
     }
   }
 }
@@ -611,6 +605,7 @@ html, body, #app, .content-wrapper, .content{
   position: absolute;
   top: 240px;
   width: 100%;
+  z-index: 9;
 }
 
 @media (max-width: 1500px) {
