@@ -7,9 +7,9 @@ const faceIconStyles = {
   alignItems: "center",
   color: "rgb(51, 173, 255)",
   display: "flex",
-  height: "150px",
+  height: "80px",
   justifyContent: "center",
-  width: "150px"
+  width: "80px"
 };
 
 const moneyIconStyles = {
