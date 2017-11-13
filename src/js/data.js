@@ -13,7 +13,7 @@ var data = {
       "votes":  345
     },
     {
-      "name":   "Salami Tawmi",
+      "name":   "Salami Tammi",
       "votes":  624
     },
     {
@@ -63,7 +63,7 @@ var data = {
   ],
   "lastYearsWinner":[
     {
-      "name": "Bipper Snooginflagin"
+      "name": "Bipper Flippersons"
     }
   ]
 };
