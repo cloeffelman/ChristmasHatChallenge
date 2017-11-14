@@ -113,4 +113,4 @@ window.addEventListener("resize",function(){
   canvas.height = window.innerHeight;
 });
 
-module.exports = snowObj
+export default snowObj

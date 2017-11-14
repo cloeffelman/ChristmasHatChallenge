@@ -37,4 +37,4 @@ var Snow = React.createClass({
   }
 });
 
-module.exports = Application
+export default Application

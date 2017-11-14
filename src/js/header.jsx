@@ -298,4 +298,4 @@ var Santa = React.createClass({
   }
 });
 
-module.exports = Header
+export default Header
