@@ -51,8 +51,13 @@ html, body, #app, .content-wrapper, .content{
   width: 80%;
 }
 
+body{
+  background: linear-gradient(to bottom, rgb(0, 102, 204), rgb(0, 255, 255));
+}
+
 .header{
   height: 100%;
+  pointer-events: none;
   position: relative;
   width: 100%;
   z-index: 10;
@@ -67,10 +72,10 @@ html, body, #app, .content-wrapper, .content{
 
 #snow{
   @include full-screen();
-  background: linear-gradient(to bottom, rgb(0, 102, 204), rgb(0, 255, 255));
+  left: 0px;
   position: fixed;
   top: 0px;
-  z-index: 1;
+  z-index: 9;
 }
 
 .footer-wrapper{
