@@ -66,6 +66,7 @@ var Header = React.createClass({
           <Contestants contestants={contestants}></Contestants>
           <LastYearsWinner lastYearsWinner={data.lastYearsWinner[0].name}></LastYearsWinner>
           <TotalVotes override={data.totals[0].overrideAutoCalculate} totalVotes = {totalVotes} overrideTotalVotes = {data.totals[0].votes} overrideTotalMoney = {data.totals[0].money}></TotalVotes>
+          <div id="snow"/>
         </div>
         <Footer upperText={data.footerText[0].upperText} lowerText={data.footerText[0].lowerText}></Footer>
       </div>
