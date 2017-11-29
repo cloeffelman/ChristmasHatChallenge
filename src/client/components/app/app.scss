@@ -13,6 +13,12 @@ html, body, #app{
   @include full-screen();
 }
 
+@media(min-width: 1500px){
+  .content-wrapper, .content{
+    @include full-screen();
+  }
+}
+
 .grid{
   width: 80%;
 }

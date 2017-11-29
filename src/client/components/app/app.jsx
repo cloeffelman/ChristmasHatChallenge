@@ -16,7 +16,6 @@ class App extends Component {
   componentDidMount(){
     axios.get('/assets/data/data.json')
       .then(res => {
-        console.log(res.data)
         this.setState({data: res.data})
       })
   }
