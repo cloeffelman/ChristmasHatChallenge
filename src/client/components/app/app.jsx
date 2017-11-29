@@ -3,22 +3,14 @@ import React, {Component} from 'react'
 import {TitleBar} from '../titleBar/titleBar'
 import Header from '../header/header'
 import {Footer} from '../footer/footer'
-
-import {initialData} from '../../assets/data/data'
 import {snow} from '../../effects/snow'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      data: initialData
-    }
-  }
   componentDidMount(){
     particlesJS('snow', snow)
   }
   render(){
-    const {data} = this.state
+    const {data} = this.props
 
     return(
       <div className="content-wrapper">

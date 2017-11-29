@@ -51,9 +51,9 @@ export const initialData = {
       "Cast your votes of $1 or 3 cans of food with any of the following IS Social Committee members: Jeanne Haslag, Brenda Mantooth, Don Martindale, Ryan Silverwood, Stacy Haller, Tiffany Lancaster, Paula Turnbull, and Marjorie Turner"
   },
   "totals":{
-    "overrideAutoCalculate": false,
-    "votes": 0,
-    "money": 0
+    "overrideAutoCalculate": true,
+    "votes": 1500,
+    "money": 1500
   },
   "lastYearsWinner":{
     "name": "Bipper Flippersons"

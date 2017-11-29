@@ -8,7 +8,9 @@
     "start": "webpack-dev-server --progress --inline --hot",
     "share": "webpack-dev-server --inline --hot --host 10.8.21.149",
     "server": "node src/server",
-    "build": "cross-env NODE_ENV=production webpack -p"
+    "clean": "rm -rf build",
+    "bundle": "cross-env NODE_ENV=production webpack -p",
+    "build": "yarn clean && yarn bundle"
   },
   "author": "Cory Loeffelman <Cloeffelman@shelterinsurance.com>",
   "license": "ISC",

@@ -28,11 +28,6 @@ const config = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
-    }),
     new copyWebpackPlugin([{from: 'src/client/assets', to: 'assets'}]),
     new htmlWebpackPlugin({
       title: 'Christmas Hat Challenge',
@@ -40,23 +35,25 @@ const config = {
       template: 'src/client/index.pug'
     }),
   ],
-  entry: {
-    bundle: [path.resolve(__dirname, 'src/client/init.jsx'), 'webpack-dev-server/client?http://localhost:3000']
-  },
   output: {
       path:  path.resolve(__dirname, 'build'),
       filename: 'bundle.[hash].js',
       publicPath: '/'
-  },
-  devtool: PROD ? 'source-map' : 'eval-source-map',
-  devServer: {
-    port: 3000,
-    contentBase:  path.resolve(__dirname, 'build')
   }
 }
 
 if(PROD){
+  config.entry = [path.resolve(__dirname, 'src/client/init.jsx')]
   config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') }))
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin())
+}
+else{
+  config.entry = [path.resolve(__dirname, 'src/client/init.jsx'), 'webpack-dev-server/client?http://localhost:3000']
+  config.devtool = 'eval-source-map'
+  config.devServer = {
+    port: 3000,
+    contentBase:  path.resolve(__dirname, 'build')
+  }
 }
 
 module.exports = config
