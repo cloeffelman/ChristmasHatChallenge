@@ -5,18 +5,19 @@ $globe-spread: 3px;
 $light-off-opacity: 0.4;
 
 .lights {
-  top: 118px;
+  top: 80px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
   z-index: 1;
-  margin: -15px 0 0 0;
+  margin: 0px;
   padding: 0;
   pointer-events: none;
   transition: all 0.5s;
-  width: 620px;
+  width: 100%;
   z-index: -1;
+
   li {
     position: relative;
     animation-fill-mode: both;
@@ -29,11 +30,15 @@ $light-off-opacity: 0.4;
     height: $globe-height;
     border-radius: 50%;
     margin: $globe-spacing/2;
+    margin-top: 0px;
     display: inline-block;
     background: $green;
     box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread $light-green;
     animation-name: flash-1;
     animation-duration: 2s;
+    &:first-child{
+      margin-left: 0px;
+    }
     &:nth-child(2n+1) {
       background: $blue;
       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread $light-blue;
@@ -54,7 +59,7 @@ $light-off-opacity: 0.4;
     }
     &:nth-child(1n + 12){
       &:after{
-        display: none;
+        display: initial;
       }
     }
     &:before {
@@ -82,6 +87,7 @@ $light-off-opacity: 0.4;
     }
   }
 }
+
 @keyframes flash-1 {
   0%, 100% { background: $green;
   box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread $green;}

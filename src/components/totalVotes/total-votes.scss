@@ -1,42 +1,59 @@
 .totals{
   align-items: center;
   display: flex;
-  height: 90px;
+  height: 80px;
   justify-content: center;
-  margin-top: 4px;
-  position: fixed;
+  margin-top: 40px;
   right: 0px;
   top: 0px;
-  transition: all 1s;
   width: 100%;
   z-index: 30;
 
   .money, .votes{
     align-items: center;
+    box-shadow: $shadow1;
     display: flex;
     border-radius: 25px;
-    height: 70px;
-    text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
-    transition: all 1s;
-  }
 
-  .votes{
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    left: 0px;
-    position: absolute;
     .icon{
       align-items: center;
       background-color: white;
-      border-bottom-right-radius: 25px;
-      border-top-right-radius: 25px;
       display: flex;
-      height: 50px;
+      font-size: 1.5em;
+      height: 30px;
+      margin: 0px;
       justify-content: center;
-      padding: 10px;
-      width: 50px;
+      padding: 15px 10px;
+      width: 30px;
     }
+
     .value{
       align-items: center;
+      color: white;
+      display: flex;
+      font-size: 1.5em;
+      font-weight: 100;
+      height: 30px;
+      justify-content: center;
+      margin: 0px;
+      padding: 15px 10px;
+      text-shadow: 0px 0px 1px rgba(black, 0.4);
+      width: 80px;
+    }
+  }
+
+  .votes{
+    left: 0px;
+    position: absolute;
+    .icon{
+      border-bottom-right-radius: 100px;
+      border-top-right-radius: 100px;
+      
+      i{
+        color: $blue;
+      }
+    }
+    .value{
       background: repeating-linear-gradient(
         -45deg,
         $light-blue,
@@ -44,33 +61,21 @@
         $blue 30px,
         $blue 60px
       );
-      color: white;
-      display: flex;
-      font-size: 24px;
-      height: 50px;
-      justify-content: center;
-      padding: 10px;
-      width: 100px;
     }
   }
 
   .money{
-    box-shadow: -1px 1px 4px rgba(0,0,0,0.4);
     right: 0px;
     position: absolute;
     .icon{
-      align-items: center;
-      background-color: white;
-      border-bottom-left-radius: 25px;
-      border-top-left-radius: 25px;
-      display: flex;
-      height: 50px;
-      justify-content: center;
-      padding: 10px;
-      width: 50px;
+      border-bottom-left-radius: 100px;
+      border-top-left-radius: 100px;
+      
+      i{
+        color: $green;
+      }
     }
     .value{
-      align-items: center;
       background: repeating-linear-gradient(
         -45deg,
         $light-green,
@@ -78,68 +83,6 @@
         $green 30px,
         $green 60px
       );
-      color: white;
-      display: flex;
-      font-size: 24px;
-      height: 50px;
-      justify-content: center;
-      padding: 10px;
-      width: 100px;
-    }
-  }
-}
-
-@media (max-width: 1500px) and (min-width: 1201px) {
-  .totals{
-    .votes, .money{
-      box-shadow: none;
-    }
-
-    .votes{
-      border: 1px solid $blue;
-      border-left: none;
-      border-bottom-left-radius: 0px;
-      border-top-left-radius: 0px;
-    }
-
-    .money{
-      border: 1px solid $light-green;
-      border-right: none;
-      border-bottom-right-radius: 0px;
-      border-top-right-radius: 0px;
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  .totals{
-    flex-direction: row;
-    left: 0px;
-    position: fixed;
-    top: 160px;
-    width: 100%;
-
-    .votes, .money{
-      border-radius: 25px;
-
-      .value{
-        border-bottom-right-radius: 25px;
-        border-top-right-radius: 25px;
-      }
-    }
-
-    .votes{
-      left: 20px;
-      .value{
-        border-bottom-left-radius: 25px;
-        border-top-left-radius: 25px;
-        border-bottom-right-radius: 0px;
-        border-top-right-radius: 0px;
-      }
-    }
-
-    .money{
-      right: 40px;
     }
   }
 }

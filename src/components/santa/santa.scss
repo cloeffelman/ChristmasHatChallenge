@@ -1,50 +1,57 @@
 .santa-wrapper {
   animation: up-down 20s linear infinite;
-  left: calc(20% + 200px);
+  left: 350px;
   position: absolute;
   z-index: 1;
-}
-@media (max-width: 1500px) {
-  .santa-wrapper {
-    left: 200px;
+  
+  .santa {
+    z-index: -1;
   }
 }
-.santa {
-  z-index: -1;
+
+@media (max-width: 1500px) {
+  .santa-wrapper{
+    left: 100px;
+  }
 }
-  .santa .body {
-    width: 190px;
-    height: 210px;
-    background: #de2f32;
-    position: relative;
-    border-radius: 50%;
-    top: 0;
-    -webkit-animation: bodyLaugh 4s linear infinite;
-    -moz-animation: bodyLaugh 4s linear infinite;
-    -ms-animation: bodyLaugh 4s linear infinite;
-    -o-animation: bodyLaugh 4s linear infinite;
-    animation: bodyLaugh 4s linear infinite;
-    -webkit-transform: translateY(50%);
-    -moz-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    -o-transform: translateY(50%);
-    transform: translateY(50%); }
-    .santa .body:before {
-      content: " ";
-      width: 7px;
-      height: 7px;
-      background: #f7be10;
-      border-radius: 50%;
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      box-shadow: 0px -18px 0px #f7be10, 0px 18px 0px #f7be10; }
-  .santa .head {
+
+.santa .body {
+  width: 190px;
+  height: 210px;
+  background: #de2f32;
+  position: relative;
+  border-radius: 50%;
+  top: 0;
+  -webkit-animation: bodyLaugh 4s linear infinite;
+  -moz-animation: bodyLaugh 4s linear infinite;
+  -ms-animation: bodyLaugh 4s linear infinite;
+  -o-animation: bodyLaugh 4s linear infinite;
+  animation: bodyLaugh 4s linear infinite;
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%); 
+}
+
+.santa .body:before {
+  content: " ";
+  width: 7px;
+  height: 7px;
+  background: #f7be10;
+  border-radius: 50%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0px -18px 0px #f7be10, 0px 18px 0px #f7be10; 
+}
+
+.santa .head {
     z-index: 2;
     position: absolute;
     bottom: 90px;

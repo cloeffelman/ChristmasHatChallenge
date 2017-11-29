@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
 
 class Leaders extends Component{
-  componentDidMount(){
-    setTimeout(() => {
-      $(".leaders").addClass("intro");
-    }, 250)
-  }
   render(){
     return(
       <div className = "leaders-wrapper">

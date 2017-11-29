@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
 
 class Contestants extends Component{
-  componentDidMount() {
-    setTimeout(function(){
-      $(".contestants").addClass("intro");
-    }, 500);
-  }
   getPlaceText(place){
     var placeText = place;
     if(place <= 20){
