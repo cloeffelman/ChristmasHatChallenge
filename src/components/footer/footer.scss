@@ -1,0 +1,44 @@
+.footer-wrapper{
+  bottom: 0px;
+  display: flex;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.footer{
+  align-items: center;
+  background-color: white;
+  border-top-left-radius: 100% 50%;
+  border-top-right-radius: 100% 50%;
+  bottom: 0px;
+  color: black;
+  display: flex;
+  padding: 10px 0px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 20px;
+    width: 100%;
+
+    hr{
+      background-color: $blue;
+      border: none;
+      height: 1px;
+      width: 70%;
+    }
+
+    p{
+      margin: 5px 10%;
+      font-weight: 700;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+
+.last-years-winner-wrapper{
+  @include full-screen();
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+}
+
+@media (max-width: 1500px) {
+  .last-years-winner-wrapper{
+    height: 320px;
+    margin: 320px 0px;
+    position: relative;
+  }
+}
+
+.last-years-winner{
+  align-items: center;
+  border-radius: 60px;
+  box-shadow: 0px -4px 0px 4px $light-silver, 1px 1px 4px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  position: relative;
+  width: 300px;
+
+  h1{
+    align-items: center;
+    background-color: white;
+    color: $light-blue;
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    height: 20px;
+    justify-content: center;
+    margin: 0px;
+    padding: 20px 0px;
+    text-shadow: $light-blue 1px 1px, $dark-blue 2px 2px;
+    width: 100%;
+  }
+
+  .image{
+    align-items: center;
+    background-color: white;
+    display: flex;
+    height: 180px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    img{
+      border: none;
+      border-radius: 50%;
+      max-height: 180px;
+      position: absolute;
+    }
+  }
+
+  .title{
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    position: absolute;
+    top: 0px;
+  }
+
+  .name{
+    bottom: 0px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    position: absolute;
+    bottom: 0px;
+  }
+}

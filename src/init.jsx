@@ -1,11 +1,11 @@
 import 'babel-polyfill'
-import Application from './app'
+import App from './components/app/app'
 import React from 'react'
 import ReactDOM from 'react-dom'
-require('../sass/app.scss')
-require('../sass/santa.scss')
+
+require('./components/app/app.scss')
 
 ReactDOM.render(
-  <Application/>,
+  <App/>,
   document.getElementById('app')
 )

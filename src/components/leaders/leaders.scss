@@ -1,0 +1,252 @@
+
+.leaders-wrapper{
+  align-items: center;
+  display: flex;
+  height: 500px;
+  position: absolute;
+  top: 240px;
+  width: 100%;
+  z-index: 9;
+}
+
+@media (max-width: 1500px) {
+  .leaders-wrapper{
+    justify-content: center;
+    position: relative;
+    top: 200px;
+
+    .leaders{
+      left: initial;
+      position: relative;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .leaders-wrapper{
+    top: 320px;
+  }
+}
+
+.leaders{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  left: -500px;
+  position: absolute;
+  transform: rotateX(-35deg) rotateY(35deg) rotateZ(15deg);
+  transform-style: preserve-3d;
+  transition: all 1s;
+  width: 500px;
+  z-index: 3;
+
+  &.intro{
+    left: 0px;
+  }
+
+  .names{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 100%;
+    width: 300px;
+
+    .name{
+      display: flex;
+      margin-bottom: 40px;
+      text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
+      width: 100%;
+      z-index: 2;
+
+      h1{
+        align-items: center;
+        box-shadow: -16px -16px 4px rgba(0,0,0,0.15);
+        color: white;
+        display: flex;
+        font-weight: bolder;
+        justify-content: center;
+        margin: 0px;
+      }
+
+      &.first{
+        position: relative;
+        z-index: 3;
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-gold,
+            $dark-gold 50px,
+            $medium-gold 50px,
+            $medium-gold 100px
+          );
+          border-radius: 80px;
+          box-shadow: 0px 0px 0px 10px $dark-gold, -12px -8px 0px 12px $medium-gold, -56px -46px 4px 12px rgba(0,0,0,0.15);
+          font-size: 32px;
+          height: 160px;
+          margin-left: -160px;
+          padding-left: 170px;
+          padding-right: 10px;
+          width: 320px;
+        }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-gold, 0px -8px 0px 12px $medium-gold, 0px -46px 4px 12px rgba(0,0,0,0.15);
+          }
+        }
+      }
+      &.second{
+        position: relative;
+        z-index: 2;
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-silver,
+            $dark-silver 40px,
+            $medium-silver 40px,
+            $medium-silver 80px
+          );
+          border-radius: 60px;
+          box-shadow: 0px 0px 0px 10px $dark-silver, -10px -8px 0px 10px $medium-silver, -46px -36px 4px 10px rgba(0,0,0,0.15);
+          font-size: 24px;
+          height: 120px;
+          margin-left: -120px;
+          padding-left: 130px;
+          padding-right: 10px;
+          width: 240px;
+        }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-silver, 0px -8px 0px 10px $medium-silver, 0px -36px 4px 10px rgba(0,0,0,0.15);
+          }
+        }
+      }
+      &.third{
+        position: relative;
+        z-index: 1;
+        h1{
+          background: repeating-linear-gradient(
+            45deg,
+            $dark-bronze,
+            $dark-bronze 30px,
+            $medium-bronze 30px,
+            $medium-bronze 60px
+          );
+          border-radius: 40px;
+          box-shadow: 0px 0px 0px 10px $dark-bronze, -10px -8px 0px 10px $medium-bronze, -46px -36px 4px 10px rgba(0,0,0,0.15);
+          font-size: 18px;
+          height: 80px;
+          margin-left: -80px;
+          padding-left: 90px;
+          padding-right: 10px;
+          width: 200px;
+        }
+        @media (max-width: 1500px) {
+          h1{
+            box-shadow: 0px 0px 0px 10px $dark-bronze, 0px -8px 0px 10px $medium-bronze, 0px -36px 4px 10px rgba(0,0,0,0.15);
+          }
+        }
+      }
+    }
+  }
+
+  .medals{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 160px;
+    z-index: 5;
+
+    .medal-wrapper{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .medal{
+      align-items: center;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      border-radius: 50%;
+      margin: 0px;
+      margin-bottom: 40px;
+      width: 100%;
+
+      .place{
+        align-items: center;
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+        color: $blue;
+        display: flex;
+        height: 50%;
+        justify-content: center;
+        margin: 0px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .votes{
+        align-items: center;
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+        color: white;
+        display: flex;
+        height: 50%;
+        justify-content: center;
+        margin: 0px;
+        text-shadow: $medium-silver 1px 1px, $medium-silver 2px 2px;
+        width: 100%;
+      }
+
+      &.first{
+        height: 160px;
+        width: 160px;
+
+        .place{
+          background-color: white;
+          color: $light-gold;
+          font-size: 36px;
+          height: 80px;
+          text-shadow: $light-gold 1px 1px, $dark-gold 2px 2px, $dark-gold 3px 3px, $dark-gold 4px 4px;
+        }
+        .votes{
+          background-color: $dark-gold;
+          font-size: 36px;
+        }
+      }
+      &.second{
+        height: 120px;
+        width: 120px;
+
+        .place{
+          background-color: white;
+          color: $light-silver;
+          font-size: 24px;
+          height: 60px;
+          text-shadow: $light-silver 1px 1px, $dark-silver 2px 2px, $dark-silver 3px 3px, $dark-silver 4px 4px;
+        }
+        .votes{
+          background-color: $dark-silver;
+          font-size: 24px;
+        }
+      }
+      &.third{
+        height: 80px;
+        width: 80px;
+
+        .place{
+          background-color: white;
+          color: $light-bronze;
+          font-size: 18px;
+          height: 40px;
+          text-shadow: $light-bronze 1px 1px, $dark-bronze 2px 2px;
+        }
+        .votes{
+          background-color: $dark-bronze;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

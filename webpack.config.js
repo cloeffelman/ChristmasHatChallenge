@@ -1,6 +1,9 @@
-var webpack = require('webpack');
-var copyWebpackPlugin = require('copy-webpack-plugin');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack'),
+      copyWebpackPlugin = require('copy-webpack-plugin'),
+      htmlWebpackPlugin = require('html-webpack-plugin'),
+      path = require('path')
+
+const PROD = process.env.NODE_ENV === 'production'
 
 module.exports = {
     module: {
@@ -16,25 +19,10 @@ module.exports = {
           exclude: [/node_modules/]
         },
         {
-          test: /\.css$/,
-          loader: 'css-loader',
-          exclude: [/node_modules/, /flexboxgrid/]
-        },
-        {
-          test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
-          loader: "file-loader",
-          include:[/roboto-fontface/, /img/]
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader?modules',
-          include: /flexboxgrid/,
-        },
-        {
           test: /\.pug$/,
           loader: 'pug-loader',
           include: /pug/,
-        },
+        }
       ],
     },
     resolve: {
@@ -46,26 +34,24 @@ module.exports = {
         jQuery: "jquery",
         "window.jQuery": "jquery"
       }),
-      new copyWebpackPlugin([
-        {from: 'src/js/data.js', to: 'assets/data.js'}
-      ]),
+      new copyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
       new htmlWebpackPlugin({
         title: 'Christmas Hat Challenge',
         filename: 'index.html',
-        template: 'src/pug/index.pug'
+        template: 'src/index.pug'
       }),
     ],
     entry: {
-      bundle: [ __dirname + '/src/js/init.jsx', 'webpack-dev-server/client?http://localhost:3000']
+      bundle: [path.resolve(__dirname, 'src/init.jsx'), 'webpack-dev-server/client?http://localhost:3000']
     },
     output: {
-        path:  __dirname + '/app',
-        filename: 'bundle.js',
+        path:  path.resolve(__dirname, 'app'),
+        filename: 'bundle.[hash].js',
         publicPath: '/'
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: PROD ? 'cheap-module-source-map' : 'cheap-module-eval-source-map',
     devServer: {
       port: 3000,
-      contentBase:  __dirname + '/app'
-    },
-};
+      contentBase:  path.resolve(__dirname, 'app')
+    }
+}
