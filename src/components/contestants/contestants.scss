@@ -4,8 +4,9 @@
   display: flex;
   height: 500px;
   position: absolute;
+  right: 0px;
   top: 240px;
-  width: 100%;
+  width: 600px;
 }
 
 @media (max-width: 1500px) {
@@ -15,6 +16,7 @@
     margin: 50px 0px;
     position: relative;
     top: auto;
+    width: 100%;
 
     .contestants{
       height: auto;
@@ -22,6 +24,12 @@
       position: relative;
       transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
       width: 90%;
+
+      .contestant{
+        height: 100px;
+        margin: 10px;
+        margin-top: 0px;
+      }
     }
   }
 }
@@ -34,8 +42,6 @@
   justify-content: center;
   overflow: auto;
   padding: 30px 0px;
-  position: absolute;
-  right: 0px;
   transform: rotateX(-25deg) rotateY(-35deg) rotateZ(-5deg);
   transform-style: preserve-3d;
   width: 600px;

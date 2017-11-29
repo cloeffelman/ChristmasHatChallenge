@@ -4,8 +4,10 @@ import Lights from '../lights/lights'
 
 const TitleBar = ({title, contestants, totals}) => (
   <div className = "title-bar">
-    <h1 className = "text">
-      <span className = "year">{title.year}</span>{title.text}
+    <div className="santa-hat-icon"/>
+    <h1 className = "title">
+      <span className = "text">{title.text}</span>
+      <span className = "year">{title.year}</span>
     </h1>
     <TotalVotes 
       override={totals.overrideAutoCalculate} 
