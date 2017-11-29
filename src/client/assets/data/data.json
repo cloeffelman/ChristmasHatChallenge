@@ -1,4 +1,4 @@
-export const initialData = {
+{
   "contestants": [
     {
       "name":   "Zed",
@@ -52,8 +52,8 @@ export const initialData = {
   },
   "totals":{
     "overrideAutoCalculate": true,
-    "votes": 1500,
-    "money": 1500
+    "votes": 2000,
+    "money": 2000
   },
   "lastYearsWinner":{
     "name": "Bipper Flippersons"

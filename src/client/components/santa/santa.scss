@@ -1,3 +1,12 @@
+.santa-area{
+  bottom: 0px;
+  height: 400px;
+  left: 0px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .santa-wrapper {
   animation: up-down 20s linear infinite;
   left: 400px;
@@ -719,12 +728,12 @@
 
 @keyframes up-down {
   0%, 20%, 100% {
-    top: -10px;
+    top: 250px;
   }
   30%, 40%{
-    top: -70px;
+    top: 200px;
   }
   50%, 90% {
-    top: -170px;
+    top: 80px;
   }
 }

@@ -9,7 +9,7 @@
 @import '../footer/footer.scss';
 @import '../lastYearsWinner/last-years-winner.scss';
 
-html, body, #app, .content-wrapper, .content{
+html, body, #app{
   @include full-screen();
 }
 
@@ -23,6 +23,10 @@ body{
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+}
+
+.content{
+  position: relative;
 }
 
 #snow{

@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Santa = () => (
+  <div className="santa-area">
     <div className="santa-wrapper">
         <div className="santa">
             <div className="head">
@@ -21,6 +22,7 @@ const Santa = () => (
             <div className="body"/>
         </div>
     </div>
+  </div>
 )
 
 export {Santa}
