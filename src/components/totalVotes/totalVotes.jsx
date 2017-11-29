@@ -11,10 +11,10 @@ class TotalVotes extends Component{
     return(
       <div className = "totals">
         <div className = "votes">
-          <h1 className = "value">{totalVotes}</h1>
           <h1 className = "icon">
             <i className="fa fa-check-circle-o"/>
           </h1>
+          <h1 className = "value">{totalVotes}</h1>
         </div>
         <div className = "money">
           <h1 className = "icon">
