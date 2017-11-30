@@ -5,7 +5,7 @@ const LastYearsWinner = ({lastYearsWinner}) => (
     <div className = "last-years-winner">
     <h1 className = "title">Last Years Winner!</h1>
     <div className = "image">
-      <img src="/assets/img/last_years_winner.jpg"/>
+      <img src="/img/last_years_winner.jpg"/>
     </div>
     <h1 className = "name">{lastYearsWinner}</h1>
     </div>

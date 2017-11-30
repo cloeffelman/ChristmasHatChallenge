@@ -28,7 +28,8 @@ const config = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    new copyWebpackPlugin([{from: 'src/client/assets', to: 'assets'}]),
+    new copyWebpackPlugin([{from: 'src/client/img', to: 'img'}]),
+    new copyWebpackPlugin([{from: 'src/client/data.json', to: 'data.json'}]),
     new htmlWebpackPlugin({
       title: 'Christmas Hat Challenge',
       filename: 'index.html',
@@ -37,7 +38,7 @@ const config = {
   ],
   output: {
       path:  path.resolve(__dirname, 'build'),
-      filename: 'bundle.[hash].js',
+      filename: 'bundle/bundle.[hash].js',
       publicPath: '/'
   }
 }
