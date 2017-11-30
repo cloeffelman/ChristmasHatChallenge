@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --inline --hot",
-    "share": "webpack-dev-server --inline --hot --host 10.8.21.149",
+    "share": "webpack-dev-server --progress --inline --hot --host 10.8.21.176",
     "server": "node src/server",
     "clean": "rm -rf build",
     "bundle": "cross-env NODE_ENV=production webpack -p",
