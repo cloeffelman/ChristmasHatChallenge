@@ -1,9 +1,9 @@
 .santa-area{
-  bottom: 0px;
-  height: 400px;
+  height: 300px;
   left: 0px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: -300px;
   width: 100%;
 }
 
@@ -728,12 +728,12 @@
 
 @keyframes up-down {
   0%, 20%, 100% {
-    top: 250px;
+    top: 280px;
   }
   30%, 40%{
     top: 200px;
   }
   50%, 90% {
-    top: 80px;
+    top: 100px;
   }
 }
